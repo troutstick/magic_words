@@ -2,9 +2,20 @@ import sys
 import create_magic as create
 import get_magic as get
 
+short_help = f"""Usage:
+    python magic.py -c
+        Generate magic words based on input file {create.input_file_name}
+
+    python magic.py -g
+        Print out the magic words in {create.product_file_name}, avoiding those already printed (stored in {get.seen_words_file})
+
+    python magic.py -h
+        For more help/usage options!"""
 
 helpstring = f"""Usage:
     python magic.py
+        Print a shorter helpstring
+
     python magic.py -h
         Print this helpstring
     
@@ -46,7 +57,7 @@ def main():
         else:
             print_help()
     elif len(args) == 1:
-        print(helpstring)
+        print(short_help)
     else:
         print_help()
 
